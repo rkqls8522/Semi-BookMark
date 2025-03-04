@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Semi-BookMark Manager</title>
+    <style>
+      * {
+        font-family: "Arial, sans-serif" !important;
+        font-weight: bold !important;
+      }
+      body {
+        background-color: beige;
+        margin: 20px;
+      }
+      #controls {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .search-container {
+        position: relative;
+        display: inline-block;
+        width: 50%;
+      }
+      .search-container input[type="text"] {
+        padding: 8px 30px 8px 8px;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 8px;
+        box-shadow: none;
+      }
+      .search-container .clear-icon {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 16px;
+        color: black;
+      }
+      button {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 8px;
+        margin: 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+        box-shadow: none;
+      }
+      button:active {
+        transform: translateY(2px);
+      }
+      h3 {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 8px;
+        padding: 5px;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .bookmark {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 8px;
+        padding: 5px;
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+      }
+      .bookmark a {
+        flex: 1;
+        text-decoration: none;
+        color: black;
+        margin-left: 8px;
+      }
+      label {
+        font-family: "Arial, sans-serif", sans-serif;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="controls">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="검색어 입력" />
+        <span class="clear-icon" id="clearSearch">&times;</span>
+      </div>
+      <br />
+      <button id="exportBtn">내보내기</button>
+      <button id="importBtn">가져오기</button>
+      <button id="deleteAllBtn">전체 삭제</button>
+      <button id="deleteSelectedBtn">선택 삭제</button>
+      <label> <input type="checkbox" id="selectAll" /> 전체 선택 </label>
+      <input type="file" id="fileInput" style="display: none" accept=".json" />
+    </div>
+    <div id="bookmarkList"></div>
+    <script src="program.js"></script>
+  </body>
+</html>
