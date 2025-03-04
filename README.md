@@ -58,9 +58,9 @@ git clone https://github.com/rkqls8522/Semi-BookMark.git
 ┃ ┣ 📜 icon-48.png    		# 크롬 확장 아이콘 (48px)
 ┃ ┗ 📜 icon-128.png   		# 크롬 확장 아이콘 (128px)
 ┣ 📂 image       					# 스크린샷 이미지 저장 폴더
-┃ ┣ 📜 저장화면면.png      # 저장 버튼 UI 캡처
+┃ ┣ 📜 저장화면.png      # 저장 버튼 UI 캡처
 ┃ ┣ 📜 날짜별목록화면.png  # 북마크 목록 화면
-┃ ┗ 📜 검색화면면.png      # 검색 기능 UI 캡처
+┃ ┗ 📜 검색화면.png      # 검색 기능 UI 캡처
 ┣ 📂 src              		# 크롬 확장 프로그램 소스 코드 폴더
 ┃ ┣ 📜 manifest.json  		# 크롬 확장 프로그램 설정 파일
 ┃ ┣ 📜 popup.js     			# 팝업에서 실행되는 스크립트
@@ -75,15 +75,10 @@ git clone https://github.com/rkqls8522/Semi-BookMark.git
 ### 📂폴더 구조 설명
 
 📂 icons/ → 확장 프로그램 로고 및 아이콘 저장
-
 📂 image/ → 프로그램 주요 화면 캡처 저장
-
 📂 src/ → 기능별 파일 저장
-
 📜 manifest.json → 크롬 확장 프로그램의 설정 파일
-
 📜 README.md → 깃허브 메인 설명 파일
-
 📜 LICENSE → MIT 라이선스 문구 추가
 
 ## 🤝 **기여 방법**
