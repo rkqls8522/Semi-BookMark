@@ -26,26 +26,6 @@ document.getElementById("saveBtn").addEventListener("click", async () => {
   }
 });
 
-// 저장된 북마크 데이터를 화면에 출력하는 함수
-function displayBookmarks() {
-  // chrome.storage.local에서 북마크 데이터 가져오기 (기본값은 빈 배열)
-  chrome.storage.local.get({ bookmarks: [] }, (result) => {
-    let bookmarks = result.bookmarks; // 저장된 북마크 배열
-    let listDiv = document.getElementById("bookmarkList"); // 북마크 목록을 출력할 div 요소
-    listDiv.innerHTML = ""; // 기존 내용을 초기화
-
-    // 각 북마크 항목마다 반복 처리
-    bookmarks.forEach((bm) => {
-      // 새로운 div 요소 생성하여 북마크 항목을 구성
-      let div = document.createElement("div");
-      div.className = "bookmark"; // CSS 스타일 적용을 위해 클래스 지정
-      // 북마크 제목은 링크로 만들어 클릭 시 새 탭에서 열리도록 함
-      div.innerHTML = `<a href="${bm.url}" target="_blank">${bm.title}</a><br><small>${bm.date}</small>`;
-      listDiv.appendChild(div); // 생성된 div를 목록에 추가
-    });
-  });
-}
-
 // 내보내기(Export) 기능 처리
 document.getElementById("exportBtn").addEventListener("click", () => {
   // chrome.storage.local에서 북마크 데이터를 가져옴
@@ -106,6 +86,42 @@ document.getElementById("fileInput").addEventListener("change", (event) => {
   // 파일 읽기 시작 (텍스트 형식으로 읽음)
   reader.readAsText(file);
 });
+// 검색 입력 필드에서 입력된 값을 기반으로 북마크 목록 필터링
+document.getElementById("searchInput").addEventListener("input", function () {
+  let query = this.value.toLowerCase(); // 입력값 소문자화
+  chrome.storage.local.get({ bookmarks: [] }, (result) => {
+    let bookmarks = result.bookmarks;
+    let filtered = bookmarks.filter(
+      (bm) =>
+        bm.title.toLowerCase().includes(query) ||
+        bm.url.toLowerCase().includes(query)
+    );
+    displayBookmarks(filtered);
+  });
+});
+
+// displayBookmarks 함수를 약간 수정하여 배열을 인자로 받을 수 있게 함
+function displayBookmarks(bookmarks = null) {
+  if (!bookmarks) {
+    chrome.storage.local.get({ bookmarks: [] }, (result) => {
+      bookmarks = result.bookmarks;
+      renderBookmarks(bookmarks);
+    });
+  } else {
+    renderBookmarks(bookmarks);
+  }
+}
+
+function renderBookmarks(bookmarks) {
+  let listDiv = document.getElementById("bookmarkList");
+  listDiv.innerHTML = "";
+  bookmarks.forEach((bm) => {
+    let div = document.createElement("div");
+    div.className = "bookmark";
+    div.innerHTML = `<a href="${bm.url}" target="_blank">${bm.title}</a><br><small>${bm.date}</small>`;
+    listDiv.appendChild(div);
+  });
+}
 
 // 팝업이 로드될 때 저장된 북마크 목록을 바로 출력하도록 설정
 document.addEventListener("DOMContentLoaded", displayBookmarks);
