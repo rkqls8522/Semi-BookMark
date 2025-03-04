@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Semi-BookMark</title>
+    <style>
+      /* 기본 스타일 설정 */
+      body {
+        font-family: Arial, sans-serif; /* 폰트 설정 */
+        width: 300px; /* 팝업 창의 너비 */
+        margin: 10px; /* 여백 */
+      }
+      button {
+        margin-bottom: 10px; /* 버튼 간의 간격 */
+      }
+      .bookmark {
+        margin-bottom: 5px; /* 북마크 항목 간의 간격 */
+        border-bottom: 1px solid #ccc; /* 각 항목 하단에 구분선 추가 */
+        padding-bottom: 5px; /* 항목 내부 여백 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 현재 보고 있는 사이트를 저장하는 버튼 -->
+    <button id="saveBtn">사이트 저장</button>
+
+    <!-- 저장된 데이터를 내보내는(백업) 버튼 -->
+    <button id="exportBtn">내보내기</button>
+
+    <!-- 저장된 데이터를 가져오는(복원) 버튼 -->
+    <button id="importBtn">가져오기</button>
+
+    <!-- 가져오기 시 파일 선택을 위한 숨겨진 파일 입력 요소 -->
+    <input type="file" id="fileInput" style="display: none" accept=".json" />
+
+    <!-- 저장된 북마크 목록을 보여줄 영역 -->
+    <div id="bookmarkList"></div>
+
+    <!-- popup.js 파일을 불러와서 동작을 구현 -->
+    <script src="popup.js"></script>
+  </body>
+</html>
