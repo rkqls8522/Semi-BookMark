@@ -75,10 +75,15 @@ git clone https://github.com/rkqls8522/Semi-BookMark.git
 ### 📂폴더 구조 설명
 
 📂 icons/ → 확장 프로그램 로고 및 아이콘 저장
+
 📂 image/ → 프로그램 주요 화면 캡처 저장
+
 📂 src/ → 기능별 파일 저장
+
 📜 manifest.json → 크롬 확장 프로그램의 설정 파일
+
 📜 README.md → 깃허브 메인 설명 파일
+
 📜 LICENSE → MIT 라이선스 문구 추가
 
 ## 🤝 **기여 방법**
