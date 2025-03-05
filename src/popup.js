@@ -35,7 +35,7 @@ document.getElementById("saveBtn").addEventListener("click", function () {
 // "목록조회" 버튼 클릭 시, program.html을 새 프로그램창으로 열 것임
 document.getElementById("listBtn").addEventListener("click", function () {
   chrome.windows.create({
-    url: chrome.runtime.getURL("program.html"),
+    url: chrome.runtime.getURL("src/program.html"),
     type: "popup",
     width: 800,
     height: 600,

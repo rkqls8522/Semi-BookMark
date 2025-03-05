@@ -62,12 +62,12 @@ git clone https://github.com/rkqls8522/Semi-BookMark.git
 ┃ ┣ 📜 날짜별목록화면.png  # 북마크 목록 화면
 ┃ ┗ 📜 검색화면.png      # 검색 기능 UI 캡처
 ┣ 📂 src              		# 크롬 확장 프로그램 소스 코드 폴더
-┃ ┣ 📜 manifest.json  		# 크롬 확장 프로그램 설정 파일
 ┃ ┣ 📜 popup.js     			# 팝업에서 실행되는 스크립트
 ┃ ┣ 📜 program.js   			# 북마크 관리 화면 기능
 ┃ ┣ 📜 background.js   		# popup or program을 열어주는 기능능
 ┃ ┣ 📜 popup.html   			# 팝업 UI
 ┃ ┗ 📜 program.html 			# 북마크 목록 화면
+┣ 📜 manifest.json  		# 크롬 확장 프로그램 설정 파일
 ┣ 📜 README.md        		# 깃허브 설명 문서
 ┣ 📜 LICENSE          		# 오픈소스 라이선스
 ```
