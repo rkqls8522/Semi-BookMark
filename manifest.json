@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Semi-BookMark",
-  "version": "1.0",
+  "version": "1.1",
   "description": "나중에 다시 방문하고 싶은 사이트를 저장하고, 목록을 조회할 수 있는 확장 프로그램.",
   "action": {
     "default_popup": "src/popup.html",
