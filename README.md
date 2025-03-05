@@ -69,7 +69,6 @@ git clone https://github.com/rkqls8522/Semi-BookMark.git
 ┃ ┗ 📜 program.html 			# 북마크 목록 화면
 ┣ 📜 manifest.json  		# 크롬 확장 프로그램 설정 파일
 ┣ 📜 README.md        		# 깃허브 설명 문서
-┣ 📜 LICENSE          		# 오픈소스 라이선스
 ```
 
 ### 📂폴더 구조 설명
@@ -84,21 +83,16 @@ git clone https://github.com/rkqls8522/Semi-BookMark.git
 
 📜 README.md → 깃허브 메인 설명 파일
 
-📜 LICENSE → MIT 라이선스 문구 추가
-
 ## 🤝 **기여 방법**
 
 1. 이 저장소를 포크(Fork)
-2. 새로운 브랜치를 만든 후 (`git checkout -b feature-branch`)
-3. 기능 추가 후 커밋 (`git commit -m "설명 추가"`)
-4. 원격 저장소에 푸시 (`git push origin feature-branch`)
-5. Pull Request 요청
+2. dev-be나 dev-fe로 이동 (`git checkout dev-be`)
+3. 새로운 브랜치를 생성 및 이동동 (`git checkout -b feature-branch`)
+4. 기능 추가 후 커밋 (`git commit -m "설명 추가"`)
+5. 원격 저장소에 푸시 (`git push origin feature-branch`)
+6. Pull Request 요청
 
 ---
-
-## 🛡️ **라이선스**
-
-이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자유롭게 사용하세요!
 
 ---
 
