@@ -33,7 +33,7 @@
 
 ## **설치 방법**
 
-### 1. **크롬 웹 스토어에서 다운로드:** [Chrome Web Store 링크](https://chrome.google.com/webstore/detail)
+### 1. **크롬 웹 스토어에서 다운로드:** [Chrome Web Store 링크](https://chromewebstore.google.com/detail/semi-bookmark/mhchnjfapfglphmkonfnnmiajdfefomg?utm_source=ext_app_menu)
 
 ### 2. **수동 설치 (개발자 모드)**
 
