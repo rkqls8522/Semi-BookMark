@@ -87,12 +87,99 @@ git clone https://github.com/rkqls8522/Semi-BookMark.git
 
 1. 이 저장소를 포크(Fork)
 2. dev-be나 dev-fe로 이동 (`git checkout dev-be`)
-3. 새로운 브랜치를 생성 및 이동동 (`git checkout -b feature-branch`)
-4. 기능 추가 후 커밋 (`git commit -m "설명 추가"`)
-5. 원격 저장소에 푸시 (`git push origin feature-branch`)
-6. Pull Request 요청
+3. 새로운 브랜치를 생성 및 이동 (`git checkout -b dev-be/feature-branch`)
+4. 기능 추가 후 규칙에 따라 커밋 (`git commit -m "feat : 설명 추가"`)
+5. 원격 저장소에 푸시 (`git push origin dev-be/feature-branch`)
+6. dev-be에 규칙에 따라 Pull Request 요청
 
 ---
+
+## 브랜치 규칙
+이 프로젝트는 특정 브랜치 보호 정책을 따릅니다.  
+코드를 수정하거나 새로운 기능을 추가하려면 아래 브랜치 규칙을 따라야 합니다.  
+
+### 1. 보호된 브랜치 (직접 푸시 불가)
+- main (배포용)
+- dev (개발 통합 브랜치)
+- dev-be (백엔드 통합 브랜치)
+- dev-fe (프론트엔드 통합 브랜치)
+
+이 브랜치들은 직접 푸시가 불가능하며, PR(Pull Request)로만 병합이 가능합니다.
+
+### 2. 브랜치 생성 규칙
+새로운 기능을 개발할 때는 아래 규칙을 따라 브랜치를 생성해야 합니다.
+
+| 브랜치명 패턴 | 용도 |
+|------------|---------------------------|
+| dev-be/*  | 백엔드 관련 기능 개발 브랜치 |
+| dev-fe/*  | 프론트엔드 관련 기능 개발 브랜치 |
+
+예시:
+```sh
+# 백엔드 기능 개발
+git checkout -b dev-be/feat-기능명
+
+# 프론트엔드 기능 개발
+git checkout -b dev-fe/feat-기능명
+```
+
+### 3. 코드 수정 방법
+```sh
+# 백엔드 기능 개발 (dev-be 하위에 생성)
+git checkout -b dev-be/feat새기능명
+git add .
+git commit -m "feat: 새 기능 추가 설명"
+git push origin dev-be/feat-기능명
+
+# 프론트엔드 기능 개발 (dev-fe 하위에 생성)
+git checkout -b dev-fe/feat-새기능명
+git add .
+git commit -m "feat: 새 기능 추가"
+git push origin dev-fe/feat-새기능명
+```
+
+### 4. PR(Pull Request) 생성
+- dev-be/feat-* 또는 dev-fe/feat-* 브랜치를 기반으로 개발
+- 기능 구현 후 dev-be 또는 dev-fe로 PR 요청
+- 코드 리뷰 후 관리자가 dev로 병합
+- 최종적으로 dev에서 테스트 후 main으로 배포
+
+
+### 5. 커밋 메시지 규칙
+```sh
+feat: 새로운 기능 추가
+fix: 버그 수정
+docs: 문서 수정
+refactor: 코드 리팩토링
+style: 코드 스타일 변경 (기능 변경 없음)
+chore: 기타 변경사항 (빌드 시스템 등)
+```
+
+예시 :
+```sh
+git commit -m "feat: 북마크 삭제 기능 추가"
+git commit -m "fix: 저장된 URL 중복 버그 해결"
+```
+
+### 6. PR (Pull Request)규칙
+```
+PR 제목 규칙
+[브랜치명] 작업 내용 요약
+예시: [dev-fe] 검색 기능 UI 개선
+
+PR 본문 필수 항목
+작업 내용 요약
+변경 사항
+검토 요청 사항
+테스트 방법
+```
+
+---
+
+## 주의사항
+- main, dev, dev-be, dev-fe 브랜치는 직접 수정 불가
+- 반드시 새 브랜치를 생성하여 기능 개발 후 PR 요청
+- dev-be/, dev-fe/* 브랜치는 자유롭게 생성 가능
 
 ---
 
