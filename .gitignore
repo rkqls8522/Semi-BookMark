@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Node.js 관련
+node_modules/
+package-lock.json
+
+# 빌드 파일
+dist/
+build/
+
+# 환경 설정 파일
+.env
